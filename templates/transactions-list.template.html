@@ -5,9 +5,9 @@
     </div>
     <div class="panel-body"> 
         <ul class ="list-group" >
-            <li ng-repeat="item in $ctrl.transactions" class="list-group-item">
+            <li ng-repeat="item in $ctrl.transactions" class="list-group-item" ng-style="{'border-left-color': item.categoryCode}">
                 <div class="container">
-                    <div class="row" style="border-left-color:{{item.categoryCode}}">
+                    <div class="row">
                         <div class="col-md-1">{{item.transactionDate | timestamp}}</div>
                         
                         <img class="col-md-1" src="{{item.merchantLogo}}">
