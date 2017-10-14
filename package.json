@@ -5,7 +5,7 @@
   "author": "Arturo Aguero",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.9",
+    "angular": "^1.5.11",
     "http-server": "^0.10.0"
   }
 }
