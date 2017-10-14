@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open Sans:300,400,400italic,600,700|Open:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
         
-
         <title>Peachtree Bank</title>
     </head>
 
@@ -16,61 +15,25 @@
         <nav class="navbar">
             <a href="index.html" ><img src="assets/logo.jpg" class="logo" alt="Peachtree Bank"></a>
         </nav>
+
         <div class="container-fluid topmargin-lg" >
             <div class="col-md-3 col-md-offset-1 " >
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <img src="assets/icons/exchange.png" style="margin-top: -2px">
-                        <h5>Make a transfer</h5>
-                    </div>
-                    <div class="panel-body">
-                        <div ng-controller="MakeTransferController as makeTransfer">
-                            <b>FROM ACCOUNT</b>
-                            <div>
-                                <input type="text" value="Free Checking(4692) - {{makeTransfer.currentBalance | currency:'$':2}}" disabled >
-                            </div>
-                            <b>TO ACCOUNT</b>
-                            <div>
-                                <input  type="text" ng-model="makeTransfer.transferTo" required >
-                            </div>
-                            <b>AMOUNT</b>
-                            <div>
-                                <input type="number" placeholder="$0.00" min="0.00" step="0.01" ng-model="makeTransfer.amount" required >
-                                <button class="btn" ng-click="makeTransfer.pay()">Pay</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <make-transfer></make-transfer>
+                
             </div> 
-                    
             <div class="col-md-7">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <img src="assets/icons/suitcase.png" style="margin-top: 10px">
-                        <h4>Recent Transactions</h4>
-                    </div>
-                    <div class="panel-body"> 
-                        <div ng-controller="TransactionsController as transactions">                        
-                            <ul>
-                                <li ng-repeat="t in transactions.list ">{{t.amount}}</li>
-                            </ul> 
-                        </div>                      
-                    </div>
-                </div>
+                <transactions-list></transactions-list>
             </div>
         </div>
         
-
-        
-
-
         <!-- Angular and JavaScripts
         ================================================== -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="node_modules/angular/angular.js"></script>
-        <script src="controllers/makeTransfer.js"></script>
-        <script src="controllers/transactions.js"></script>
+        <script src="controllers/main.js"></script>
+        <script src="controllers/make-transfer.component.js"></script>
+        <script src="controllers/transactions-list.component.js"></script>
 
     </body>
 </html>  
