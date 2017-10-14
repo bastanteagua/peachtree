@@ -14,6 +14,7 @@ angular.module('peachtreeApp')
           var self = this;
           $http.get('mock/transactions.json').then(function(response) {
             self.transactions = response.data.data;
+            console.log(self.transactions);
           });
         },
     }
