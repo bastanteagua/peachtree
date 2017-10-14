@@ -5,8 +5,10 @@
     </div>
     <div class="panel-body"> 
         <div>
-            <ul ng-repeat="item in $ctrl.list">
-                <li>{{item}}</li>
+            <ul class="list-group">
+                <li ng-repeat="item in $ctrl.transactions" class="list-group-item">
+                    {{item.categoryCode}}
+                </li>
             </ul> 
         </div>                      
     </div>
