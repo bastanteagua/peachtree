@@ -6,19 +6,17 @@
     <div class="panel-body"> 
         <ul class ="list-group" >
             <li ng-repeat="item in $ctrl.transactions" class="list-group-item" ng-style="{'border-left-color': item.categoryCode}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-1">{{item.transactionDate | timestamp}}</div>
-                        
-                        <img class="col-md-1" src="{{item.merchantLogo}}">
-                        
-                        <div class="col-md-4">{{item.merchant}}
-                            <br/>
-                            <h6>{{item.transactionType}}</h6>
-                        </div>
-
-                        <div class="col-md-1 pull-right">-{{item.amount}}</div>
+                <div class="row clearfix">
+                    <div class="col-md-2">{{item.transactionDate | timestamp}}</div>
+                    
+                    <img class="col-md-1 merchant-img" src="{{item.merchantLogo}}">
+                    
+                    <div class="col-md-7">
+                        <p class="medium nomargin">{{item.merchant}}</p>
+                        <h6 class="nomargin">{{item.transactionType}}</h6>
                     </div>
+
+                    <div class="col-md-1 medium">-{{item.amount}}</div>
                 </div>
             </li>
         </ul>        
