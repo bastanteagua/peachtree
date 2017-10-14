@@ -4,10 +4,23 @@
         <h4>Recent Transactions</h4>
     </div>
     <div class="panel-body"> 
-        <div>
-            <ul ng-repeat="item in $ctrl.list">
-                <li>{{item}}</li>
-            </ul> 
-        </div>                      
+        <ul class ="list-group" >
+            <li ng-repeat="item in $ctrl.transactions" class="list-group-item">
+                <div class="container">
+                    <div class="row" style="border-left-color:{{item.categoryCode}}">
+                        <div class="col-md-1">{{item.transactionDate | timestamp}}</div>
+                        
+                        <img class="col-md-1" src="{{item.merchantLogo}}">
+                        
+                        <div class="col-md-4">{{item.merchant}}
+                            <br/>
+                            <h6>{{item.transactionType}}</h6>
+                        </div>
+
+                        <div class="col-md-1 pull-right">-{{item.amount}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>        
     </div>
 </div>

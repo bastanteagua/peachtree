@@ -89,6 +89,20 @@ input[disabled] {
     color: #fff;
 }
 
+.list-group-item
+{
+    border-left: solid 8px #969696;
+}
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
 
 
 @font-face { font-family: Kanit; src: url('css/Fonts/Kanit-Regular.ttf'); } 
