@@ -1,0 +1,11 @@
+{
+  "name": "peachtreebank",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Arturo Aguero",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "http-server": "^0.10.0"
+  }
+}
