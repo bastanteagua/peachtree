@@ -4,6 +4,9 @@
         <h4>Recent Transactions</h4>
     </div>
     <div class="panel-body"> 
+        <div class="row">
+                <button class="btn" ng-click="$ctrl.sort()">Sort</button>
+        </div>
         <ul class ="list-group" >
             <li ng-repeat="item in $ctrl.transactions" class="list-group-item" ng-style="{'border-left-color': item.categoryCode}">
                 <div class="row clearfix">

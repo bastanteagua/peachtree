@@ -15,6 +15,10 @@ angular.module('peachtreeApp')
           $http.get('mock/transactions.json').then(function(response) {
             self.transactions = response.data.data;
           });
+
+          this.sort = function sort() {
+            self.transactions.sort(function(a, b){return a.amount-b.amount})
+        };
         },
     }
 );
