@@ -11,13 +11,48 @@
             </div>
             <b>TO ACCOUNT</b>
             <div>
-                <input  type="text" ng-model="$ctrl.transferTo" required >
+                <input id="transferToInput" type="text" ng-model="$ctrl.transferTo" required >
             </div>
             <b>AMOUNT</b>
             <div>
                 <input type="number" placeholder="$0.00" min="0.00" step="0.01" ng-model="$ctrl.amount" required >
-                <button class="btn" ng-click="$ctrl.pay()">Pay</button>
+                <button class="btn btn-orange"  data-toggle="modal" data-target="#myModal">Submit</button>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <img src="assets/icons/exchange.png" style="margin-top: -2px">
+                            <h5>Transfer preview</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <b>FROM ACCOUNT</b>
+                                <div>
+                                    <input type="text" value="Free Checking(4692) - {{$ctrl.currentBalance | currency:'$':2}}" disabled >
+                                </div>
+                                <b>TO ACCOUNT</b>
+                                <div>
+                                    <input id="transferToInput" type="text" ng-model="$ctrl.transferTo" disabled >
+                                </div>
+                                <b>AMOUNT</b>
+                                <div>
+                                    <input type="number" placeholder="$0.00" min="0.00" step="0.01" ng-model="$ctrl.amount" disabled >
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-orange" ng-click="$ctrl.pay()" data-dismiss="modal">Transfer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    
     </div>
 </div>

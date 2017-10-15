@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     font-family: Kanit;
     font-size: 12pt;
+    color: #555;
   }
 
 body {
@@ -80,18 +81,47 @@ input[disabled] {
 
 .btn {
     float: right;
+    height: 40px;
+    margin-left: 10px
+}
+.btn-orange {
     background-color: #EE7033;
     color: #fff;
     width: 180px;
-    height: 40px;
 }
 
-.btn:hover {
+.btn-orange:hover, .btn-orange:selection {
     color: #fff;
+}
+
+.card{
+    min-width: 315px
+}
+
+.sort-bar{
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.sort-btn{
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 0 20px 0 20px;    
+    margin-left: -8px;
+    font-size: 10pt;
+    font-weight: 500;
+    height: 30px
+}
+
+.searchbox{
+    width: auto;
+    margin-bottom: 0px;
+    padding: 0px 0px 5px 0px;
 }
 
 .list-group-item
 {
+    border: 2px solid #ddd;
     border-left: solid 8px #969696;
 }
 .list-group-item:first-child {
@@ -116,9 +146,42 @@ input[disabled] {
     filter: gray; /* IE6-9 */
     filter: grayscale(1); /* W3C */
     height:45px;
-    width:75px
+    width:60px;
+    padding-right: 0px; 
+    margin-right: 15px; 
   }
 
+  @media (max-width:500px){
+  .col-sm-1, .col-sm-8 {
+    padding-left: 4px; 
+    padding-right: 0px; 
+    margin-right: 0px;
+  }
+  
+  .container-fluid {
+    padding-right: 0px; 
+    padding-left: 0px; 
+  }
+}
+
+.col-sm-1, .col-sm-8 { 
+    float: left;
+}
+
+.filtersTitle{
+    padding-right: 20px; 
+    font-size: 8pt
+}
+span.search 
+{
+  float: left;
+}
+span.search > span
+{
+  margin-left: -14px;
+  font-size: 12pt;
+  cursor: pointer;
+}
 
 
 @font-face { font-family: Kanit; src: url('css/Fonts/Kanit-Regular.ttf'); } 

@@ -4,22 +4,29 @@
         <h4>Recent Transactions</h4>
     </div>
     <div class="panel-body"> 
-        <div class="row">
-                <button class="btn" ng-click="$ctrl.sort()">Sort</button>
+        <div class="clearfix sort-bar">
+            <span class="search">
+                <input class="searchbox" ng-model="$ctrl.filterText" type="text" placeholder="Search by typing..."><span ng-click="$ctrl.clearSearchBox()">x</span>
+            </span>
+            <b class="filtersTitle">Sort by  </b>
+            <button class="sort-btn" ng-click="$ctrl.sortbyDate()">DATE</button>
+            <button class="sort-btn" ng-click="$ctrl.sortbyBeneficiary()">BENEFICIARY</button>
+            <button class="sort-btn" ng-click="$ctrl.sortbyAmount()">AMOUNT</button>
         </div>
         <ul class ="list-group" >
-            <li ng-repeat="item in $ctrl.transactions" class="list-group-item" ng-style="{'border-left-color': item.categoryCode}">
+            <li ng-repeat="item in $ctrl.transactions | filter: searchAll" class="list-group-item" ng-style="{'border-left-color': item.categoryCode}">
                 <div class="row clearfix">
-                    <div class="col-md-2">{{item.transactionDate | timestamp}}</div>
-                    
-                    <img class="col-md-1 merchant-img" src="{{item.merchantLogo}}">
-                    
-                    <div class="col-md-7">
+                    <div class="col-sm-1 col-md-2 col-lg-2" style="display:inline-block">
+                        {{item.transactionDate | timestamp}}
+                    </div>
+                    <img class="col-sm-1 col-md-1 merchant-img" style="display:inline-block" src="{{item.merchantLogo}}">
+                    <div class="col-xs-5 col-sm-8 col-md-7" style="display:inline-block">
                         <p class="medium nomargin">{{item.merchant}}</p>
                         <h6 class="nomargin">{{item.transactionType}}</h6>
                     </div>
-
-                    <div class="col-md-1 medium">-{{item.amount}}</div>
+                    <div class="col-sm-1 col-md-1" style="display:inline-block">
+                        <b>-{{item.amount}}</b>
+                    </div>
                 </div>
             </li>
         </ul>        
